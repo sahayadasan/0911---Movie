@@ -6,5 +6,10 @@ pipeline {
         sh 'echo "hello work"'
       }
     }
+    stage('') {
+      steps {
+        sleep 10
+      }
+    }
   }
 }
