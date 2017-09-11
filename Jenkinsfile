@@ -1,5 +1,10 @@
 pipeline {
   agent any
+  
+  environment {
+    DOCKER_PASSWORD = credentials ('DOCKER_PASSWORD')
+  }
+  
   stages {
     stage('greetings') {
       steps {
@@ -8,7 +13,7 @@ pipeline {
     }
     stage('sleep') {
       steps {
-        sleep 10
+        sleep 1
       }
     }
     stage('build docker') {
@@ -18,7 +23,7 @@ pipeline {
     }
     stage('docker push') {
       steps {
-        sh '''docker login -u sahaya -p
+        sh '''docker login -u sahaya -p $DOCKER_PASSWORD
 docker push sahaya/popcorn:$BUILD_NUMBER'''
       }
     }
