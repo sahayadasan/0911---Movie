@@ -16,5 +16,11 @@ pipeline {
         sh 'docker build -t sahaya/popcorn:$BUILD_NUMBER .'
       }
     }
+    stage('docker push') {
+      steps {
+        sh '''docker login -u sahaya -p
+docker push sahaya/popcorn:$BUILD_NUMBER'''
+      }
+    }
   }
 }
