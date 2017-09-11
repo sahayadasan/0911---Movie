@@ -11,5 +11,10 @@ pipeline {
         sleep 10
       }
     }
+    stage('build docker') {
+      steps {
+        sh 'docker build -t popcorn:$BUILD_NUMBER .'
+      }
+    }
   }
 }
