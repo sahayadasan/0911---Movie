@@ -13,7 +13,7 @@ pipeline {
     }
     stage('build docker') {
       steps {
-        sh 'docker build -t popcorn:$BUILD_NUMBER .'
+        sh 'docker build -t sahaya/popcorn:$BUILD_NUMBER .'
       }
     }
   }
