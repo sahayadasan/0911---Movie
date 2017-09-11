@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "hello work"'
       }
     }
-    stage('') {
+    stage('sleep') {
       steps {
         sleep 10
       }
