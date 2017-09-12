@@ -7,7 +7,8 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get movies_url
-    assert_response :success
+    #assert_response :success
+    assert_response :error
   end
 
   test "should get new" do
