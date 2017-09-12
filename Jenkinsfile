@@ -11,14 +11,14 @@ pipeline {
         sh 'echo "hello work"'
       }
     }
-    stage('testing') {
-      steps {
-        sh '''rails test'''
-      }
-    }
     stage('build docker') {
       steps {
         sh 'docker build -t sahaya/popcorn:$BUILD_NUMBER .'
+      }
+    }
+    stage('testing') {
+      steps {
+        sh '''docker run sahaya/popcorn:$BUILD_NUMBER rails test'''
       }
     }
     stage('docker push') {
