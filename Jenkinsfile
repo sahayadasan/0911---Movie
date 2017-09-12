@@ -27,7 +27,7 @@ pipeline {
 docker push sahaya/popcorn:$BUILD_NUMBER'''
       }
     }
-    stage('deploy to k8s') {
+    stage('deploy to K8S') {
       steps {
         sh '''envsubst < deployment.yaml | kubectl apply -f -'''
       }
