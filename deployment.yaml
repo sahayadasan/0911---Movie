@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: chyld/popcorn:7
+        image: sahaya/popcorn:20
         ports:
         - containerPort: 3333
