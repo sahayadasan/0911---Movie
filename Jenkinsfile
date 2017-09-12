@@ -11,9 +11,9 @@ pipeline {
         sh 'echo "hello work"'
       }
     }
-    stage('sleep') {
+    stage('testing') {
       steps {
-        sleep 1
+        sh '''rails test''''
       }
     }
     stage('build docker') {
