@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: sahaya/popcorn:20
+        image: sahaya/popcorn:$BUILD_NUMBER
         ports:
         - containerPort: 3333
