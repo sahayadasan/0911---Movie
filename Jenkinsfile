@@ -13,7 +13,7 @@ pipeline {
     }
     stage('testing') {
       steps {
-        sh '''rails test''''
+        sh '''rails test'''
       }
     }
     stage('build docker') {
